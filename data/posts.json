@@ -1,0 +1,34 @@
+{
+    "models": [
+        {
+            "Name": "MAC-10",
+            "Description":["MAC-10 I made for a game","Rendered in blender"],
+            "Images": ["Red Chaos MAC-10.png","mac-10 render.png","MAC-10 Recidivist.png"]
+        },
+        {
+            "Name": "Targets",
+            "Description":["Simple Targets I modeled","Rendered in blender"],
+            "Images": ["Target_1.png","Target_2.png"]
+        }
+    ],
+    "digitalart": [
+        {
+            "Name": "Earth Render",
+            "Description":["Rendered in blender"],
+            "Images": ["Space_Scene_-_MonkeyDev_7578.png"]
+        }
+    ],
+    "projects": [
+        {
+            "Name": "Dynamic Weather",
+            "Description":["Dynamic weather and dynamic wind."],
+            "Links": ["LKVbz6CuAHI","ZqfEdwri4b0"]
+        },
+        {
+            "Name": "MD's PBR Plugin",
+            "Description":["This plugin allows you to save you pbr materials and easily apply it to a part but with the new roblox updates its a pointless plugin","Check it out here https://devforum.roblox.com/t/mds-pbr-plugin/1522023"],
+            "Videos": ["2021-10-14_21-14-15_Trim.mp4"],
+            "Images": ["MD's PBR.png"]
+        }
+    ]
+}

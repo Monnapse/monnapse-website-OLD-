@@ -1,0 +1,137 @@
+<!-- --\\ Made by Monnapse#7578 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        home
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="" ie=edge>
+
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/model.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="prefetch" href="{{ url_for('static', filename='media/loadingScreen.png') }}">
+
+    {% if not posts.current %}
+        <style>
+            body {
+                overflow-y: auto;
+            }
+        </style>
+    {% endif %}
+</head>
+</body>
+
+<body class="FirstBody">
+    <!-- Top Navagation -->
+    <nav class="top-nav">
+        <ul>
+            <li class="top-li">
+                <btn class="nav-text" id="home" data="home">home</btn>
+                <btn class="nav-text" id="about" data="about">about</btn>
+                <btn class="nav-text" id="models" data="models">models</btn>
+                <btn class="nav-text" id="projects" data="projects">projects</btn>
+                <btn class="nav-text activePage" id="graphics" data="digitalart">digital art</btn>
+            </li>
+        </ul>
+    </nav>
+
+    {% if posts.current %}
+        {% for post in posts.digitalart %}
+            {% if post.Name == posts.current %}
+           
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <div id="caption"></div>
+                <img class="modal-content" id="img01">
+            </div>
+
+            <div class="background"></div>
+            <div class="model">
+                <span class="close close1">&times;</span>
+                <div id="left">
+                    <img></img>
+                </div>
+                <div id="right">
+                    <img></img>
+                </div>
+
+                <!-- Title -->
+                <h1>{{ post.Name }}</h1>
+                
+                <div class="List">
+                    <!-- Videos -->
+                    <!-- From Url -->
+                    {% for link in post.Links %}
+                        <iframe class="Img" src="https://www.youtube.com/embed/{{ link }}" title="YouTube video player" frameborder="0" gyroscope; picture-in-picture allowfullscreen controls>
+                            The browser does not support videos.
+                        </iframe>
+                    {% endfor %}
+                    <!-- From File -->
+                    {% for video in post.Videos %}
+                        <video class="Img" controls>
+                            <source src="../static/media/videos/{{ video }}" type="video/mp4">
+                            Your browser does not support HTML video.
+                        </video>
+                    {% endfor %}
+     
+                    <!-- Images -->
+                    {% for img in post.Images %}
+                        <img id="myImg" class="Img" src="../static/media/portfolio/{{ img }}" alt="{{ img }}">
+                    {% endfor %}
+                </div>
+
+                <!-- Vertical Navagation -->
+                <nav class="vertical-nav">
+                    <ul>
+                        <li class="vertical-li">
+                            {% for img in post.Links %}
+                                <div class="verticalnav"></div>
+                            {% endfor %}
+                            {% for img in post.Videos %}
+                                <div class="verticalnav"></div>
+                            {% endfor %}
+                            {% for img in post.Images %}
+                                <div class="verticalnav"></div>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="description">
+                    {% for description in post.Description %}
+                        <p>{{ description }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <div class="gallery">
+        {% for post in posts.digitalart %}
+            <div class="img-container">
+                {% if post.Images %}
+                <a href="digitalart/{{ post.Name }}"><img src="../static/media/portfolio/{{ post.Images[0] }}"></img></a>
+                {% elif post.Links %}
+                    <a href="digitalart/{{ post.Name }}"><img src="https://img.youtube.com/vi/{{ post.Links[0] }}/maxresdefault.jpg"></img></a>
+                {% else %}
+                    <a href="digitalart/{{ post.Name }}"><img></img></a>
+                {% endif %}
+
+                <div class="overlay">
+                    <div class="text">{{ post.Name }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

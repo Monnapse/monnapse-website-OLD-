@@ -1,0 +1,66 @@
+<!-- --\\ Made by Monnapse#7578 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        home
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="" ie=edge>
+
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="prefetch" href="{{ url_for('static', filename='media/loadingScreen.png') }}">  
+
+    <style>
+        body {
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+</body>
+
+<body class="FirstBody AboutBackground">
+    <!-- Top Navagation -->
+    <nav class="top-nav">
+        <ul>
+            <li class="top-li">
+                <btn class="nav-text" id="home" data="home">home</btn>
+                <btn class="nav-text activePage" id="about" data="about">about</btn>
+                <btn class="nav-text" id="models" data="models">models</btn>
+                <btn class="nav-text" id="projects" data="projects">projects</btn>
+                <btn class="nav-text" id="graphics" data="digitalart">digital art</btn>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="main" class="AboutBackground">
+        <div class="about-container">
+            <div class="title">About me</div>
+            <p class="about">
+                Hello im Monnapse I love doing all kinds of stuff on computers, making games, programming bots, making graphics. I also fly drones, and mountain bike.
+            </p>
+            <p class="about">
+                I currently know Python, Java, Javascript, Lua, HTML, CSS but I am also learning C# and C++ currently.
+                Softwares I use is Roblox Studio, Unreal Engine 5, Visual Studio 2022, Visual Studio Code, Substance Painter, Substance Sampler, Substance Designer, Adobe Photoshop, Adobe Ilustrator, Premeire Pro, Blender.
+            </p>
+
+            <div class="h2">Social Links</div>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@monnapse" target="_blank"><img src="../static/media/youtube.png"></img></a>
+                <a href="https://github.com/Monnapse" target="_blank"><img src="../static/media/github.png"></img></a>
+                <a href="https://twitter.com/Monnapse" target="_blank"><img src="../static/media/twitter.png"></img></a>
+                <a href="https://www.artstation.com/monnapse" target="_blank"><img src="../static/media/artstation.png"></img></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
